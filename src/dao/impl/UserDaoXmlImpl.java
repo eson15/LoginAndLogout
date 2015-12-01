@@ -14,6 +14,8 @@ import domain.User;
  * @description This dao is to operate xml file including add user to xml file and find user from xml file
  */
 public class UserDaoXmlImpl implements UserDao {
+	
+	@Override
 	public void addUser(User user){
 		try {
 			Document document = XmlUtils.getDocument();
@@ -33,6 +35,7 @@ public class UserDaoXmlImpl implements UserDao {
 		}
 	}
 	
+	@Override
 	public User findUser(String username){
 		try {
 			Document document = XmlUtils.getDocument();
@@ -56,6 +59,7 @@ public class UserDaoXmlImpl implements UserDao {
 		}
 	}
 	
+	@Override
 	public User findUser(String username, String password){
 		try {
 			Document document = XmlUtils.getDocument();
