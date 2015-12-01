@@ -1,2 +1,5 @@
 /junit/
 /dao/
+/service/
+/utils/
+/daoconfig.properties
