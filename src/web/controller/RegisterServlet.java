@@ -47,6 +47,7 @@ public class RegisterServlet extends HttpServlet {
 			BusinessService service = new BusinessServiceImpl();
 			service.registerUser(user);
 			request.setAttribute("message", "注册成功。本页面将在5秒后跳转到首页<meta http-equiv='refresh' content='5;url=/LoginAndLogout/index.jsp'");
+			request.getSession().setAttribute("user", user);
 			request.getRequestDispatcher("/message.jsp").forward(request, response);
 			
 		} catch(UserExistException e){ //这个异常可能在BusinessServiceImpl.java中的registerUser方法会抛出，这里需要对其进行处理，即用户已注册
